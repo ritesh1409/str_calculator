@@ -21,4 +21,8 @@ describe StringCalculator do
   it "supports new lines between numbers" do
     expect(calculator.add("1\n2,3")).to eq(6)
   end
+
+  it "throws an exception for invalid input '1,\n'" do
+    expect { calculator.add("1,\n") }.to raise_error("Invalid input")
+  end
 end
