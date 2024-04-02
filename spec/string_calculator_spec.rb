@@ -25,4 +25,8 @@ describe StringCalculator do
   it "throws an exception for invalid input '1,\n'" do
     expect { calculator.add("1,\n") }.to raise_error("Invalid input")
   end
+
+  it "supports different delimiters" do
+    expect(calculator.add("//;\n1;2")).to eq(3)
+  end
 end
